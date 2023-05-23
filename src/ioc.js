@@ -1,4 +1,5 @@
 const { factory } = require('./factory');
+const { logger } = require('./console-logger');
 
 class Container {
   constructor(ownFactory) {
@@ -15,6 +16,7 @@ class Container {
 }
 
 const ioc = new Container();
+ioc.register('logger', logger);
 
 module.exports = {
   Container,
